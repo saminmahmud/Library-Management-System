@@ -54,7 +54,7 @@ Prerequisites:
 
 ### Clone the Repository
 ```
-git clone https://github.com/saminmahmud/Library-Management-System-.git
+git clone https://github.com/saminmahmud/Library-Management-System.git
 cd Library-Management-System
 ```
 
