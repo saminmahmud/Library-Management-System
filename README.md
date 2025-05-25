@@ -46,6 +46,10 @@ library-management-system/
 - View all users
 - Delete users
 
+
+### 📊 ER diagram
+![alt text](image.png)
+
 ### 🔧 Setup Instructions
 Prerequisites:
 - Python 3.x
@@ -79,5 +83,3 @@ self.connection = mysql.connector.connect(
 ```
 python main.py
 ```
-
-
