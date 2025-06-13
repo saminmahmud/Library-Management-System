@@ -21,6 +21,7 @@ library-management-system/
 | ├── table.py
 │ └── database.py
 ├── README.md # Project documentation
+├── image.png
 ├── .gitignore
 ```
 
