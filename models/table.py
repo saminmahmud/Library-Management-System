@@ -1,7 +1,7 @@
 def CreateTables(cursor):
 
-    cursor.execute("CREATE DATABASE IF NOT EXISTS library_db")
-    cursor.execute("USE library_db")
+    cursor.execute("CREATE DATABASE IF NOT EXISTS library_database")
+    cursor.execute("USE library_database")
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS users (
