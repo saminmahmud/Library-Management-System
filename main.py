@@ -1,10 +1,11 @@
 import getpass
 from datetime import datetime, timedelta
 from models.book import Book
+from models.insertData import insert_dummy_data
 from models.user import User
 from models.reviewAndRating import ReviewAndRating
 from models.reservation import Reservation
-
+import bcrypt
 
 class LibraryApp:
     BORROW_DAYS = 14
@@ -28,7 +29,7 @@ class LibraryApp:
             admin_choice = input("Is Admin? (y/n): ").lower()
             is_admin = True if admin_choice == 'y' else False
 
-            existing_user = User.login(username, password)  # actually we should check only username
+            existing_user = User.login(username, password) 
             if existing_user:
                 print("Username already exists.")
                 return False
@@ -40,7 +41,19 @@ class LibraryApp:
         except Exception as e:
             print(f"Registration failed: {e}")
             return False
+        
 
+    def create_admin(self):
+        username = "admin"
+        password = "admin"
+
+        from models.user import User
+        existing_user = User.login(username, password) 
+        if not existing_user:
+            user = User(username, password, True) 
+            user.save()
+            insert_dummy_data()
+     
 
     def login(self):
         try:
@@ -363,6 +376,7 @@ class LibraryApp:
 def main():
     app = LibraryApp()
     logged_in = False
+    app.create_admin() 
     while not logged_in:
         print("\n=== Library Management System ===")
         print("1. Login")

@@ -60,3 +60,45 @@ def CreateTables(cursor):
             FOREIGN KEY (book_id) REFERENCES books(id)
         )
     """)
+
+
+
+    # # add some books
+    # cursor.execute("""
+    #     INSERT INTO books (title, author, category, quantity)
+    #     VALUES 
+    #     ('The Great Gatsby', 'F. Scott Fitzgerald', 'Fiction', 5),
+    #     ('To Kill a Mockingbird', 'Harper Lee', 'Fiction', 3),
+    #     ('1984', 'George Orwell', 'Dystopian', 4),
+    #     ('Pride and Prejudice', 'Jane Austen', 'Romance', 2),
+    #     ('The Catcher in the Rye', 'J.D. Salinger', 'Fiction', 6)
+    # """)
+
+    # # add some borrow_records
+    # cursor.execute("""
+    #     INSERT INTO borrow_records (user_id, book_id, borrow_date, due_date)
+    #     VALUES 
+    #     (1, 1, NOW(), DATE_ADD(NOW(), INTERVAL 14 DAY)),
+    #     (1, 2, NOW(), DATE_ADD(NOW(), INTERVAL 14 DAY)),
+    #     (2, 3, NOW(), DATE_ADD(NOW(), INTERVAL 14 DAY))
+    # """)
+
+    # # add some reviews
+    # cursor.execute("""
+    #     INSERT INTO reviews (book_id, user_id, review, rating)
+    #     VALUES 
+    #     (1, 1, 'A masterpiece of 20th century literature.', 5),
+    #     (2, 1, 'A powerful story about racial injustice.', 4),
+    #     (3, 2, 'A chilling depiction of a totalitarian regime.', 5),
+    #     (4, 2, 'A timeless romance with sharp social commentary.', 4),
+    #     (5, 1, 'A thought-provoking exploration of teenage angst.', 4)
+    # """)
+
+    # # add some reservations
+    # cursor.execute("""
+    #     INSERT INTO reservations (user_id, book_id, reservation_date)
+    #     VALUES 
+    #     (1, 1, NOW()),
+    #     (2, 2, NOW()),
+    #     (1, 3, NOW())
+    # """)
